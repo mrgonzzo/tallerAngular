@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Angular 1.6 WorkShop</title>
+
+    <link rel="stylesheet" href="css/main.css">
+
+
+
+</head>
+<!-- los atributos angular empiezan con ng- -->
+
+<body ng-app="app" ng-strict-di>
+
+
+    <script src="js/vendor/angular.min.js"></script>
+   
+    <script>
+       // declaro el mpdulo principal 
+    angular.module('app',[]);
+    //creo un componente
+    angular.module('app').component('helloWorld', {
+        //una buena practica es que el template sea un solo nodo es mas elegante
+        //<div><h1>Hola CaraCola</h1><p>Que vuestros sueños mueran y se pudran con vosotros para que no infecten nuestro futuro</p></div>
+        //que
+        //<h1>Hola CaraCola</h1><p>Que vuestros sueños mueran y se pudran con vosotros para que no infecten nuestro futuro</p>
+        //porque devuelvo un nodo el <div>, aunque tenga hijos
+        template:'<div><h1>Hola CaraCola</h1><p>Que vuestros sueños mueran y se pudran con vosotros para que no infecten nuestro futuro</p></div>'
+    });
+    
+    angular.module('app'.component('goodbyeWorld',{
+        template:'<div><h1>Adios CaraChocho</h1></div>'
+    }));
+    </script>
+     
+<hello-world></hello-world>
+<goodbye-world></goodbye-world>
+</body>
+
+</html>
